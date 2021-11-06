@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
 
         // intialize data
-        val myData =DataSource.products
+        val myData = DataSource.products
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.adapter = PhonesProductsAdapter (this,myData)
 

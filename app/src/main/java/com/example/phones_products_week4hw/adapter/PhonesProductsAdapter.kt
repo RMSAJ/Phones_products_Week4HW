@@ -13,8 +13,7 @@ import com.example.phones_products_week4hw.model.Product
 
 class PhonesProductsAdapter(
     private val context: Context,
-    private val productSet: List<Product>
-): RecyclerView.Adapter<PhonesProductsAdapter.PhonesProductViewHolder>() {
+    private val productSet: List<Product>) : RecyclerView.Adapter<PhonesProductsAdapter.PhonesProductViewHolder>() {
 
 
     class PhonesProductViewHolder(private val itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -40,8 +39,8 @@ class PhonesProductsAdapter(
     override fun onBindViewHolder(holder: PhonesProductViewHolder, position: Int) {
         val item = productSet[position]
         holder.imageView.setImageResource(item.imageResourceId)
-        holder.textViewName.text = item.productName
-        holder.textViewPrice.text = item.productPrice
+        holder.textViewName.text = context.getSystemService(item.productName).toString()
+        holder.textViewPrice.text = context.getSystemService(item.productPrice).toString()
         holder.vipImage.apply { if (item.isVip) setImageResource(R.drawable.ic_baseline_star_24) }
         holder.buttonpressView.setOnClickListener { it.isClickable }
 

@@ -3,7 +3,7 @@ import com.example.phones_products_week4hw.model.Product
 
 object DataSource{
 val products: List<Product> = listOf(
-        Product( R.drawable.iphone,
+         Product( R.drawable.iphone,
                 "Iphone 12",
                 "Price: 4500 SR",
                 true,
