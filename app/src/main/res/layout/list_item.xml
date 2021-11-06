@@ -2,7 +2,6 @@
 <com.google.android.material.card.MaterialCardView
 xmlns:app = "http://schemas.android.com/apk/res-auto"
 xmlns:android= "http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="8dp"
     android:layout_width="match_parent"
   android:layout_height="88dp">
@@ -10,9 +9,7 @@ xmlns:android= "http://schemas.android.com/apk/res/android"
 <androidx.constraintlayout.widget.ConstraintLayout
 
    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-
-    >
+    android:layout_width="match_parent">
 
     <ImageView
         android:id="@+id/phoneImage"
@@ -21,9 +18,7 @@ xmlns:android= "http://schemas.android.com/apk/res/android"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/iphone"
-        android:importantForAccessibility="no"
-
-        />
+        android:importantForAccessibility="no" />
 
     <TextView
         android:id="@+id/productName"
@@ -33,7 +28,7 @@ xmlns:android= "http://schemas.android.com/apk/res/android"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@id/phoneImage"
         android:layout_marginStart="16dp"
-        android:text="@string/product_name_iphone_12"
+        android:text=""
         android:textColor="@color/black"
         android:textStyle="bold"
 
@@ -74,8 +69,6 @@ xmlns:android= "http://schemas.android.com/apk/res/android"
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </com.google.android.material.card.MaterialCardView>

@@ -1,5 +1,6 @@
 package com.example.phones_products_week4hw.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +12,12 @@ import com.example.phones_products_week4hw.R
 import com.example.phones_products_week4hw.model.Product
 
 class PhonesProductsAdapter(
-    private val productSet: List<Product> = DataSource.products
+    private val context: Context,
+    private val productSet: List<Product>
 ): RecyclerView.Adapter<PhonesProductsAdapter.PhonesProductViewHolder>() {
 
 
-    class PhonesProductViewHolder( itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class PhonesProductViewHolder(private val itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.findViewById(R.id.phoneImage)
         val textViewName: TextView = itemView.findViewById(R.id.productName)
         val textViewPrice: TextView = itemView.findViewById(R.id.price)
@@ -25,25 +27,25 @@ class PhonesProductsAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PhonesProductViewHolder {
-        val adpterLayout =LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item,parent, false)
+        val adpterLayout = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
         return PhonesProductViewHolder(adpterLayout)
     }
+
     override fun getItemCount(): Int {
-        val size = productSet.size
-        return size
+        return productSet.size
+
     }
 
 
     override fun onBindViewHolder(holder: PhonesProductViewHolder, position: Int) {
         val item = productSet[position]
-        holder.imageView.apply { item.imageResourceId }
-        holder.textViewPrice.apply { item.productPrice  }
-        holder.textViewName.apply { item.productName  }
-        holder.buttonpressView.apply { isClickable  }
-        holder.vipImage.apply { item.isVip }
+        holder.imageView.setImageResource(item.imageResourceId)
+        holder.textViewName.text = item.productName
+        holder.textViewPrice.text = item.productPrice
+        holder.vipImage.apply { if (item.isVip) setImageResource(R.drawable.ic_baseline_star_24) }
+        holder.buttonpressView.setOnClickListener { it.isClickable }
+
+
     }
-
-
 
 }

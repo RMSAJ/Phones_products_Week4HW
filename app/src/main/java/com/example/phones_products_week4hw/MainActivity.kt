@@ -9,20 +9,20 @@ import com.example.phones_products_week4hw.adapter.PhonesProductsAdapter
 import com.example.phones_products_week4hw.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-     private lateinit var binding: ActivityMainBinding
+      // ccnnect with xml
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-//        val myDataset = DataSource.products
-        val adapter = PhonesProductsAdapter()
-            this.binding.recyclerListView?.adapter = adapter
-        this.binding.recyclerListView?.layoutManager = LinearLayoutManager(this)
-      binding.recyclerListView?.setHasFixedSize(true)
+        setContentView(R.layout.activity_main)
 
-        // Enable up button for backward navigation
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // intialize data
+        val myData =DataSource.products
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        recyclerView.adapter = PhonesProductsAdapter (this,myData)
+
+
+        recyclerView.setHasFixedSize(true)
 
     }
 }
