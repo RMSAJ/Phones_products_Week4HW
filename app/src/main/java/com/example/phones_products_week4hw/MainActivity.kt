@@ -1,6 +1,7 @@
 package com.example.phones_products_week4hw
 
 import DataSource
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,4 +26,7 @@ class MainActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
 
     }
+
+
+
 }

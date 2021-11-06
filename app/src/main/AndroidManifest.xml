@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Phones_products_Week4HW">
         <activity
+            android:name=".adapter.MainActivityActuial"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
