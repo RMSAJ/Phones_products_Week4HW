@@ -46,7 +46,7 @@ class PhonesProductsAdapter(
         holder.imageView.setImageResource(item.imageResourceId)
         holder.textViewName.text = item.productName
         holder.textViewPrice.text = item.productPrice
-
+        holder.vipImage.isVisible = if (item.isVip ) { true } else {false}
         holder.buttonpressView.setOnClickListener {
 
             if (item.quantityNumber > 0) {
